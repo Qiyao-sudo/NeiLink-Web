@@ -1,0 +1,1188 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  /* Refined color palette — warm, multi-accent, less "AI" */
+  --color-neilink: #2dd4bf;
+  --color-neilink-light: #5eead4;
+  --color-neilink-dark: #14b8a6;
+  --color-neilink-glow: rgba(45, 212, 191, 0.2);
+  --color-warm: #f59e0b;
+  --color-warm-light: #fbbf24;
+  --color-warm-dark: #d97706;
+  --color-violet: #a78bfa;
+  --color-rose: #fb7185;
+  --color-emerald: #34d399;
+  --color-orange: #fb923c;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #fafafa;
+  --foreground: #18181b;
+  --card: rgba(255, 255, 255, 0.8);
+  --card-foreground: #18181b;
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+  --primary: #14b8a6;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(20, 184, 166, 0.08);
+  --secondary-foreground: #14b8a6;
+  --muted: rgba(0, 0, 0, 0.05);
+  --muted-foreground: rgba(0, 0, 0, 0.5);
+  --accent: rgba(20, 184, 166, 0.1);
+  --accent-foreground: #0d9488;
+  --destructive: #ef4444;
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.06);
+  --ring: #14b8a6;
+  --chart-1: #14b8a6;
+  --chart-2: #8b5cf6;
+  --chart-3: #22c55e;
+  --chart-4: #f59e0b;
+  --chart-5: #f43f5e;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #18181b;
+  --sidebar-primary: #14b8a6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(20, 184, 166, 0.1);
+  --sidebar-accent-foreground: #0d9488;
+  --sidebar-border: rgba(0, 0, 0, 0.08);
+  --sidebar-ring: #14b8a6;
+
+  /* ── Theme-aware custom properties (light mode defaults) ── */
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-bg-hover: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(0, 0, 0, 0.06);
+  --card-border-hover: rgba(0, 0, 0, 0.1);
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.55);
+  --text-muted: rgba(0, 0, 0, 0.35);
+  --section-bg: #fafafa;
+  --section-bg-alt: #f5f5f5;
+  --hover-bg: rgba(0, 0, 0, 0.03);
+  --hover-bg-strong: rgba(0, 0, 0, 0.06);
+  --overlay-from: rgba(250, 250, 250, 0.9);
+  --overlay-to: rgba(250, 250, 250, 0.8);
+  --nav-bg: rgba(250, 250, 250, 0.8);
+  --nav-border: rgba(0, 0, 0, 0.06);
+  --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+  --badge-bg-opacity: 0.06;
+  --badge-border-opacity: 0.1;
+  --footer-bg-from: #f4f4f5;
+  --footer-bg-to: #fafafa;
+  --footer-border: rgba(0, 0, 0, 0.06);
+  --icon-bg: rgba(0, 0, 0, 0.04);
+  --icon-border: rgba(0, 0, 0, 0.06);
+  --metric-bg: rgba(0, 0, 0, 0.03);
+  --mobile-menu-bg: rgba(250, 250, 250, 0.98);
+  --command-bg: rgba(255, 255, 255, 0.95);
+  --command-border: rgba(0, 0, 0, 0.1);
+  --command-backdrop: rgba(255, 255, 255, 0.6);
+  --dot-bg: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --radius: 0.625rem;
+  /* Warmer, neutral dark background — no blue tint */
+  --background: #09090b;
+  --foreground: #e4e4e7;
+  /* Neutral card glass — warm, not blue-tinted */
+  --card: rgba(20, 20, 26, 0.75);
+  --card-foreground: #e4e4e7;
+  --popover: #131316;
+  --popover-foreground: #e4e4e7;
+  --primary: #2dd4bf;
+  --primary-foreground: #09090b;
+  --secondary: rgba(45, 212, 191, 0.08);
+  --secondary-foreground: #2dd4bf;
+  --muted: rgba(255, 255, 255, 0.05);
+  --muted-foreground: rgba(255, 255, 255, 0.5);
+  --accent: rgba(45, 212, 191, 0.1);
+  --accent-foreground: #5eead4;
+  --destructive: #ef4444;
+  /* Neutral borders — not teal-tinted */
+  --border: rgba(255, 255, 255, 0.07);
+  --input: rgba(255, 255, 255, 0.06);
+  --ring: #2dd4bf;
+  --chart-1: #2dd4bf;
+  --chart-2: #a78bfa;
+  --chart-3: #34d399;
+  --chart-4: #f59e0b;
+  --chart-5: #fb7185;
+  --sidebar: #131316;
+  --sidebar-foreground: #e4e4e7;
+  --sidebar-primary: #2dd4bf;
+  --sidebar-primary-foreground: #09090b;
+  --sidebar-accent: rgba(45, 212, 191, 0.1);
+  --sidebar-accent-foreground: #5eead4;
+  --sidebar-border: rgba(255, 255, 255, 0.07);
+  --sidebar-ring: #2dd4bf;
+
+  /* ── Theme-aware custom properties (dark mode) ── */
+  --card-bg: rgba(20, 20, 26, 0.5);
+  --card-bg-hover: rgba(20, 20, 26, 0.8);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --card-border-hover: rgba(255, 255, 255, 0.1);
+  --text-primary: rgba(255, 255, 255, 0.85);
+  --text-secondary: rgba(255, 255, 255, 0.5);
+  --text-muted: rgba(255, 255, 255, 0.35);
+  --section-bg: #09090b;
+  --section-bg-alt: #09090b;
+  --hover-bg: rgba(255, 255, 255, 0.02);
+  --hover-bg-strong: rgba(255, 255, 255, 0.04);
+  --overlay-from: rgba(9, 9, 11, 0.9);
+  --overlay-to: rgba(9, 9, 11, 0.8);
+  --nav-bg: rgba(9, 9, 11, 0.8);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --badge-bg-opacity: 0.08;
+  --badge-border-opacity: 0.15;
+  --footer-bg-from: #060608;
+  --footer-bg-to: #09090b;
+  --footer-border: rgba(255, 255, 255, 0.04);
+  --icon-bg: rgba(255, 255, 255, 0.04);
+  --icon-border: rgba(255, 255, 255, 0.06);
+  --metric-bg: rgba(255, 255, 255, 0.04);
+  --mobile-menu-bg: rgba(9, 9, 11, 0.98);
+  --command-bg: rgba(20, 20, 26, 0.85);
+  --command-border: rgba(255, 255, 255, 0.08);
+  --command-backdrop: rgba(0, 0, 0, 0.6);
+  --dot-bg: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom selection color */
+::selection {
+  background: rgba(45, 212, 191, 0.3);
+  color: inherit;
+}
+
+/* Focus-visible ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--primary, #2dd4bf);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Text balance utility for better heading wrapping */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Custom scrollbar — theme-aware */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--section-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle text shadow — theme-aware */
+.glow-text {
+  text-shadow: 0 0 20px rgba(45, 212, 191, 0.15);
+}
+
+.glow-text-strong {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.2), 0 0 30px rgba(45, 212, 191, 0.12);
+}
+
+:root:not(.dark) .glow-text {
+  text-shadow: 0 0 20px rgba(20, 184, 166, 0.1);
+}
+
+:root:not(.dark) .glow-text-strong {
+  text-shadow: none;
+}
+
+/* Gradient text — warmer, more nuanced */
+.gradient-text {
+  background: linear-gradient(135deg, #fafafa, #2dd4bf, #5eead4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero subtitle — animated multi-color shimmer gradient */
+@keyframes hero-subtitle-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.hero-subtitle-gradient {
+  background: linear-gradient(90deg, var(--text-primary), #2dd4bf, #f59e0b, var(--text-primary));
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hero-subtitle-shimmer 8s linear infinite;
+}
+
+/* CTA button — animated border gradient + shine sweep */
+@keyframes cta-border-rotate {
+  0% { --cta-border-angle: 0deg; }
+  100% { --cta-border-angle: 360deg; }
+}
+
+@property --cta-border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.cta-shine-btn {
+  position: relative;
+}
+
+.cta-shine-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--cta-border-angle, 0deg), #f59e0b, #2dd4bf, #f59e0b);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: cta-border-rotate 4s linear infinite;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.cta-shine-btn:hover::after {
+  opacity: 0.8;
+}
+
+/* CTA shine sweep — runs once on page load */
+@keyframes cta-shine-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.cta-shine-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  pointer-events: none;
+  z-index: 2;
+  animation: cta-shine-sweep 1.5s ease-out 2s both;
+}
+
+/* Section badge — enhanced with left border accent */
+.section-badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-left-width: 3px;
+  border-left-style: solid;
+}
+
+/* Glass card — theme-aware via CSS variables */
+.glass-card {
+  position: relative;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.1),
+    0 4px 8px rgba(0,0,0,0.08),
+    0 12px 24px rgba(0,0,0,0.06);
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  background: var(--card-bg-hover);
+  border-color: var(--card-border-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.12),
+    0 8px 16px rgba(0,0,0,0.1),
+    0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Animated gradient border — theme-aware */
+.gradient-border {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--card-border-hover), transparent, var(--card-border));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Pulse glow — much more subtle */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.06);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(45, 212, 191, 0.1), 0 0 50px rgba(45, 212, 191, 0.03);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Grid background — theme-aware via CSS variables */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--card-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--card-border) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Radial gradient overlay — theme-aware */
+.radial-gradient-overlay {
+  background: radial-gradient(ellipse at center, transparent 0%, var(--overlay-to) 70%);
+}
+
+/* Noise texture overlay — fixed full-screen grain */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Scan line effect */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Data flow animation */
+@keyframes data-flow {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.data-flow-line {
+  animation: data-flow 3s linear infinite;
+}
+
+/* Shimmer effect — theme-aware */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, var(--hover-bg-strong), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Feature card hover — theme-aware */
+.feature-card-glow {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card-glow:hover {
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.dark .feature-card-glow:hover {
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Section divider — theme-aware via CSS variable */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--card-border-hover), transparent);
+}
+
+/* Canvas container for Three.js */
+.three-canvas-container canvas {
+  outline: none !important;
+}
+
+/* Floating orb animations — subtle parallax depth */
+@keyframes floatOrb0 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(30px, -20px); }
+  50% { transform: translate(-20px, 30px); }
+  75% { transform: translate(20px, 20px); }
+}
+
+@keyframes floatOrb1 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-25px, 25px); }
+  50% { transform: translate(30px, -15px); }
+  75% { transform: translate(-15px, -20px); }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(20px, 15px); }
+  50% { transform: translate(-30px, 20px); }
+  75% { transform: translate(15px, -25px); }
+}
+
+/* Light mode overrides — most handled by CSS variables above */
+:root:not(.dark) .gradient-text {
+  background: linear-gradient(135deg, #18181b, #0d9488, #14b8a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light mode card hover — more visible shadow */
+:root:not(.dark) .feature-card-glow:hover {
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+:root:not(.dark) .glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.1),
+    0 8px 16px rgba(0,0,0,0.08),
+    0 20px 40px rgba(0,0,0,0.06);
+}
+
+/* Light mode command palette backdrop — lighter overlay */
+:root:not(.dark) .command-palette-backdrop {
+  background: var(--command-backdrop);
+}
+
+/* ScrollVelocityBar gradient — theme-aware */
+.scroll-velocity-bar {
+  background: linear-gradient(90deg, #2dd4bf, #a78bfa);
+}
+
+/* Light mode — darker/more saturated for visibility on light backgrounds */
+:root:not(.dark) .scroll-velocity-bar {
+  background: linear-gradient(90deg, #0d9488, #7c3aed);
+}
+
+/* ── Theme-aware utility classes ── */
+.text-themed-primary {
+  color: var(--text-primary);
+}
+
+.text-themed-secondary {
+  color: var(--text-secondary);
+}
+
+.text-themed-muted {
+  color: var(--text-muted);
+}
+
+.bg-themed-card {
+  background: var(--card-bg);
+}
+
+.border-themed {
+  border-color: var(--card-border);
+}
+
+.bg-themed-section {
+  background: var(--section-bg);
+}
+
+.bg-themed-hover {
+  background: var(--hover-bg);
+}
+
+.bg-themed-hover-strong {
+  background: var(--hover-bg-strong);
+}
+
+.bg-themed-icon {
+  background: var(--icon-bg);
+  border-color: var(--icon-border);
+}
+
+/* Nav themed (scrolled state) */
+.nav-themed {
+  background: var(--nav-bg);
+  border-color: var(--nav-border);
+  box-shadow: var(--nav-shadow);
+}
+
+/* Button secondary themed */
+.btn-secondary-themed {
+  border-color: var(--card-border);
+  color: var(--text-secondary);
+}
+
+.btn-secondary-themed:hover {
+  border-color: var(--card-border-hover);
+  color: var(--text-primary);
+  background: var(--hover-bg);
+}
+
+/* Badge themed — uses accent color with theme-aware opacity */
+.badge-themed {
+  background: var(--hover-bg-strong);
+  color: var(--text-secondary);
+  border-color: var(--card-border-hover);
+}
+
+/* Stat / metric value gradient — theme-aware */
+.stat-gradient {
+  background: linear-gradient(135deg, var(--text-primary), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === Micro-interaction keyframes === */
+
+/* Tilt shimmer — a gradient sweep from left to right on hover */
+@keyframes tilt-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.tilt-shimmer-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.tilt-shimmer-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.04) 45%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.04) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: none;
+}
+
+.group:hover .tilt-shimmer-overlay::after {
+  animation: tilt-shimmer 0.8s ease-out;
+}
+
+/* Pulse border — border color pulse animation */
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.05); }
+  50% { border-color: var(--pulse-border-color, rgba(255, 255, 255, 0.15)); }
+}
+
+/* Progress fill — width from 0 to 100% */
+@keyframes progress-fill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Icon bounce — small bounce effect */
+@keyframes icon-bounce {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+  60% { transform: translateY(-2px); }
+}
+
+.icon-bounce-on-hover {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .icon-bounce-on-hover {
+  animation: icon-bounce 0.5s ease;
+}
+
+/* Icon pulse on hover */
+@keyframes icon-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.group:hover .icon-pulse-on-hover {
+  animation: icon-pulse 0.6s ease;
+}
+
+/* Shimmer bar for download cards — top bar animation */
+@keyframes shimmer-bar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.shimmer-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--shimmer-bar-color, rgba(45, 212, 191, 0.5)),
+    transparent
+  );
+  transform: translateX(-100%);
+}
+
+.group:hover .shimmer-bar::after {
+  animation: shimmer-bar 1.2s ease-out;
+}
+
+/* Border glow pulse for download cards */
+@keyframes border-glow-pulse {
+  0%, 100% { box-shadow: 0 0 0px var(--glow-color, rgba(45, 212, 191, 0)); }
+  50% { box-shadow: 0 0 12px var(--glow-color, rgba(45, 212, 191, 0.15)), 0 0 4px var(--glow-color, rgba(45, 212, 191, 0.1)); }
+}
+
+/* Step number pulse */
+@keyframes step-number-pulse {
+  0%, 100% { opacity: 0.06; }
+  50% { opacity: 0.18; }
+}
+
+/* Data flow animation for connecting lines */
+@keyframes data-flow-line {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(200%); opacity: 0; }
+}
+
+/* Security item left border slide-in */
+@keyframes border-slide-in {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+
+/* Security item background slide */
+@keyframes bg-slide-in {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+/* Particle burst for download click */
+@keyframes particle-burst {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(0); opacity: 0; }
+}
+
+.particle-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-burst 0.6s ease-out forwards;
+}
+
+/* Wave sway animation for footer divider */
+@keyframes wave-sway {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-30px); }
+}
+
+.footer-wave-divider {
+  animation: wave-sway 8s ease-in-out infinite;
+}
+
+/* ── Task 8-c: TrustSection & HowItWorks enhancements ── */
+
+/* Rotating conic gradient border for quote card */
+@keyframes rotate-gradient-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.rotating-gradient-border {
+  position: relative;
+  z-index: 0;
+}
+
+.rotating-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    #34d399,
+    #2dd4bf,
+    #a78bfa,
+    #f59e0b,
+    #34d399
+  );
+  animation: rotate-gradient-border 8s linear infinite;
+  z-index: -2;
+}
+
+.rotating-gradient-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--card-bg);
+  z-index: -1;
+}
+
+/* Gentle float oscillation for achievement badges */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0) rotate(var(--float-rotate, 0deg)); }
+  50% { transform: translateY(-8px) rotate(var(--float-rotate, 0deg)); }
+}
+
+.gentle-float {
+  animation: gentle-float 3.5s ease-in-out infinite;
+}
+
+/* SVG flow line draw animation */
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+.flow-line-draw {
+  animation: draw-line 1.2s ease-out forwards;
+}
+
+/* Flow line circle pulse */
+@keyframes flow-circle-pulse {
+  0%, 100% { r: 4; opacity: 0.6; }
+  50% { r: 6; opacity: 1; }
+}
+
+/* Pulsing connection line for flow demo */
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.pulse-line {
+  animation: pulse-line 2s ease-in-out infinite;
+}
+
+/* Data packet travel animation */
+@keyframes packet-travel {
+  0% { left: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+.packet-dot {
+  animation: packet-travel 2s ease-in-out infinite;
+}
+
+/* Completion check fade-in */
+@keyframes completion-fade {
+  from { opacity: 0; transform: translateY(4px) scale(0.8); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.completion-indicator {
+  animation: completion-fade 0.5s ease-out forwards;
+}
+
+/* === Task 9-c: Spotlight card hover effect === */
+
+/* Spotlight card — radial gradient follows cursor on hover */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.04),
+    transparent 60%
+  );
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* === Task 9-c: Gradient mesh background keyframes === */
+
+@keyframes mesh-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(60px, -40px) scale(1.05); }
+  50% { transform: translate(-30px, 50px) scale(0.95); }
+  75% { transform: translate(40px, 20px) scale(1.02); }
+}
+
+@keyframes mesh-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-50px, 30px) scale(0.97); }
+  50% { transform: translate(40px, -60px) scale(1.03); }
+  75% { transform: translate(-20px, -30px) scale(1.01); }
+}
+
+@keyframes mesh-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(35px, 45px) scale(1.04); }
+  50% { transform: translate(-55px, -25px) scale(0.96); }
+  75% { transform: translate(25px, -40px) scale(1.01); }
+}
+
+@keyframes mesh-float-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-40px, -35px) scale(0.98); }
+  50% { transform: translate(50px, 30px) scale(1.05); }
+  75% { transform: translate(-30px, 45px) scale(0.99); }
+}
+
+/* === Task 10-c: Ripple click effect === */
+
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  left: var(--ripple-x, 50%);
+  top: var(--ripple-y, 50%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+:root:not(.dark) .ripple-container::after {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.ripple-container.ripple-active::after {
+  animation: ripple-expand 0.6s ease-out;
+}
+
+@keyframes ripple-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+/* === Task 10-c: Slot machine digit animation === */
+
+@keyframes slot-roll {
+  0% {
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+  10% {
+    filter: blur(2px);
+  }
+  90% {
+    filter: blur(1px);
+  }
+  100% {
+    transform: translateY(var(--slot-target, 0));
+    filter: blur(0px);
+  }
+}
+
+.slot-digit-container {
+  display: inline-block;
+  height: 1.1em;
+  overflow: hidden;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.slot-digit-inner {
+  display: flex;
+  flex-direction: column;
+  transition: none;
+}
+
+.slot-digit-inner.animating {
+  animation: slot-roll 1.5s ease-out forwards;
+}
+
+/* === Task 12-c: SectionDivider animations === */
+
+/* Wave drift — slow horizontal animation for SVG wave divider */
+@keyframes wave-drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50px); }
+}
+
+.wave-drift {
+  animation: wave-drift 20s linear infinite;
+}
+
+/* Dot pulse — subtle opacity pulse for dots divider */
+@keyframes dot-pulse {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+/* === Task 12-d: Download button breathing glow === */
+@keyframes breathing-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15), 0 0 40px rgba(245, 158, 11, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.25), 0 0 60px rgba(245, 158, 11, 0.1);
+  }
+}
+
+.breathing-glow {
+  animation: breathing-glow 3s ease-in-out infinite;
+}
+
+/* Light mode breathing glow — slightly different tone */
+:root:not(.dark) .breathing-glow {
+  animation: breathing-glow-light 3s ease-in-out infinite;
+}
+
+@keyframes breathing-glow-light {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.12), 0 0 32px rgba(245, 158, 11, 0.04);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(245, 158, 11, 0.2), 0 0 48px rgba(245, 158, 11, 0.08);
+  }
+}
+
+/* === Task 11-d: Section entrance gradient shift === */
+
+@keyframes section-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 2% 50%;
+  }
+}
+
+.section-enter {
+  background-size: 200% 200%;
+  animation: section-gradient-shift 2s ease-out once;
+}
+
+/* === Task 12-a: OnboardingTour spotlight animations === */
+
+@keyframes tour-spotlight-pulse {
+  0%, 100% {
+    border-color: rgba(45, 212, 191, 0.5);
+  }
+  50% {
+    border-color: rgba(45, 212, 191, 0.9);
+  }
+}
+
+@keyframes tour-spotlight-glow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ================================================================
+   prefers-reduced-motion — accessibility support
+   Disables all CSS animations & transitions for users who prefer
+   reduced motion. Layout-critical opacity transitions are kept
+   but made instant.
+   ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all CSS keyframe animations */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable CSS transitions — except opacity for essential state changes */
+  * {
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Allow very fast opacity transitions for essential UI state */
+  [style*="opacity"],
+  [class*="animate"],
+  .glass-card,
+  .section-divider {
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Hide animated decorative elements that serve no purpose without motion */
+  .floating-orb,
+  .footer-wave-divider,
+  .pulse-glow,
+  .float-animation,
+  .data-flow-line,
+  .shimmer,
+  .pulse-line,
+  .packet-dot,
+  .gentle-float,
+  .particle-dot,
+  .tilt-shimmer-overlay::after,
+  .shimmer-bar::after,
+  .wave-drift {
+    display: none !important;
+    animation: none !important;
+  }
+
+  /* Rotating gradient border — freeze rotation */
+  .rotating-gradient-border::before {
+    animation: none !important;
+  }
+
+  /* Spotlight card — keep the hover area but no transition */
+  .spotlight-card::before {
+    transition: none !important;
+  }
+
+  /* Slot machine — just show final value */
+  .slot-digit-inner.animating {
+    animation: none !important;
+  }
+}
