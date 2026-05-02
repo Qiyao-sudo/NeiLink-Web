@@ -320,11 +320,11 @@ export default function TrustSection() {
     let cancelled = false;
     async function fetchStars() {
       try {
-        const res = await fetch("/api/github");
+        const res = await fetch("https://api.github.com/repos/Qiyao-sudo/NeiLink");
         if (!res.ok) throw new Error("Failed to fetch");
         const data = await res.json();
         if (!cancelled) {
-          setGithubStars(data.stars ?? 0);
+          setGithubStars(data.stargazers_count ?? 0);
           setStarsLoading(false);
         }
       } catch {

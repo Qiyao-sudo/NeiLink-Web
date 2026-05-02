@@ -1,4 +1,4 @@
-# NeiLink 官网 — 本地部署与调试指南
+# NeiLink 官网
 
 > NeiLink（轻连）官网项目，基于 Next.js 16 + Tailwind CSS 4 + Framer Motion + GSAP + Three.js 构建。
 

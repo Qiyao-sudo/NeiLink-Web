@@ -25,10 +25,13 @@ function useLatestVersion() {
 let versionCache = "v1.0.0";
 
 if (typeof window !== "undefined") {
-  fetch("/api/github")
-    .then((r) => r.json())
-    .then((data: { latestVersion?: string }) => {
-      if (data.latestVersion) versionCache = data.latestVersion;
+  fetch("https://api.github.com/repos/Qiyao-sudo/NeiLink/releases/latest")
+    .then((r) => {
+      if (!r.ok) throw new Error("Failed to fetch");
+      return r.json();
+    })
+    .then((data: { tag_name?: string }) => {
+      if (data.tag_name) versionCache = data.tag_name;
     })
     .catch(() => {});
 }

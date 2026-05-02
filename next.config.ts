@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
-  /* config options here */
+  output: "export",
+  basePath: "/NeiLink-Web",
+  assetPrefix: "/NeiLink-Web",
+  images: { unoptimized: true },
   typescript: {
     ignoreBuildErrors: true,
   },
