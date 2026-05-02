@@ -9,9 +9,7 @@ import HeroSection from "@/components/neilink/HeroSection";
 import ScrollVelocityBar from "@/components/neilink/ScrollVelocityBar";
 import SectionDivider from "@/components/neilink/SectionDivider";
 import BackToTop from "@/components/neilink/BackToTop";
-import SectionNav from "@/components/neilink/SectionNav";
 import ScrollTimeline from "@/components/neilink/ScrollTimeline";
-import KeyboardShortcutsOverlay from "@/components/neilink/KeyboardShortcutsOverlay";
 import CursorTrail from "@/components/neilink/CursorTrail";
 import ParallaxProvider from "@/components/neilink/ParallaxProvider";
 import NoiseOverlay from "@/components/neilink/NoiseOverlay";
@@ -142,10 +140,8 @@ export default function Home() {
         <SectionDivider variant="wave" flip />
         <DownloadSection />
         <Footer />
-        <KeyboardShortcutsOverlay />
         <CursorTrail />
         <ParallaxProvider />
-        <SectionNav />
         <ScrollTimeline />
         <BackToTop />
         </main>

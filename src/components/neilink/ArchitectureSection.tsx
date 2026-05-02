@@ -21,7 +21,7 @@ interface ArchDevice {
   id: string;
   label: string;
   sublabel: string;
-  Icon: React.ElementType;
+  Icon: React.ComponentType<{ size?: number; color?: string; style?: React.CSSProperties }>;
   color: string;
   desktopX: number;
   desktopY: number;
