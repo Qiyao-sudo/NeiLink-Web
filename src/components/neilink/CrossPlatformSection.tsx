@@ -218,7 +218,7 @@ export default function CrossPlatformSection() {
           >
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center bg-[rgba(20,20,26,0.8)] border border-[rgba(255,255,255,0.08)] pulse-glow">
               <div className="text-center">
-                <img src="/logo.png" alt="NeiLink" className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-contain mx-auto mb-1" />
+                <img src="./logo.png" alt="NeiLink" className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-contain mx-auto mb-1" />
                 <div className="text-[10px] text-themed-muted">{t.crossPlatform.centerLabel}</div>
               </div>
             </div>

@@ -166,7 +166,7 @@ export default function Footer() {
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src="/logo.png"
+                  src="./logo.png"
                   alt="NeiLink"
                   className="w-12 h-12 rounded-xl object-contain"
                 />
@@ -278,7 +278,7 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="NeiLink" className="w-4 h-4 rounded object-contain opacity-50" />
+              <img src="./logo.png" alt="NeiLink" className="w-4 h-4 rounded object-contain opacity-50" />
               <p className="text-xs text-themed-muted">
                 &copy; {new Date().getFullYear()} NeiLink. {t.footer.allRightsReserved}
               </p>

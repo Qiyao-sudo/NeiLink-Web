@@ -115,7 +115,7 @@ export default function Navbar() {
               onClick={() => handleNavClick("#hero")}
             >
               <img
-                src="/logo.png"
+                src="./logo.png"
                 alt="NeiLink"
                 className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl object-contain"
               />

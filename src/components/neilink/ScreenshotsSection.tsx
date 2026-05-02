@@ -316,7 +316,7 @@ function AppMockup({ type, isActive }: { type: string; isActive: boolean }) {
             {/* Web page content */}
             <div className="flex flex-col items-center justify-center py-4 gap-3">
               <img
-                src="/logo.png"
+                src="./logo.png"
                 alt="NeiLink"
                 className="w-10 h-10 rounded-xl object-contain"
               />

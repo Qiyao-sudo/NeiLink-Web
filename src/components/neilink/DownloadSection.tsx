@@ -398,7 +398,7 @@ export default function DownloadSection() {
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
             className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 overflow-hidden"
           >
-            <img src="/logo.png" alt="NeiLink" className="w-full h-full object-contain p-1" />
+            <img src="./logo.png" alt="NeiLink" className="w-full h-full object-contain p-1" />
           </motion.div>
           <span
             className="section-badge mb-6"

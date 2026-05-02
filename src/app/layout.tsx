@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   keywords: ["NeiLink", "轻连", "局域网", "文件传输", "文件分享", "P2P", "AES-256", "开源"],
   authors: [{ name: "Qiyao-sudo" }],
   icons: {
-    icon: "/logo.png",
+    icon: "./logo.png",
   },
   openGraph: {
     title: "NeiLink 轻连 — 局域网极速文件分享工具",
