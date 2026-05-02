@@ -25,7 +25,7 @@ const zh: Translations = {
     subtitle: "面向个人用户的跨平台局域网文件分享工具",
     subtitleLine2: "专注在本地网络中快速、安全地分享文件",
     cta: "立即下载",
-    ctaSecondary: "查看源码",
+    ctaSecondary: "查看仓库",
     version: "支持 Windows · macOS · Linux",
     scrollDown: "探索更多",
   },

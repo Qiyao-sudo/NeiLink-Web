@@ -25,7 +25,7 @@ const en: Translations = {
     subtitle: "Cross-platform LAN file sharing tool for personal users",
     subtitleLine2: "Focus on fast, secure file sharing in local networks",
     cta: "Download Now",
-    ctaSecondary: "View Source",
+    ctaSecondary: "View Repository",
     version: "Supports Windows · macOS · Linux",
     scrollDown: "Explore More",
   },

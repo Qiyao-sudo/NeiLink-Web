@@ -479,9 +479,7 @@ export default function HeroSection() {
         <div ref={ctaRef} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 opacity-0">
           <motion.a
             ref={magneticBtnRef}
-            href="https://github.com/Qiyao-sudo/NeiLink/releases"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#download"
             className="group relative px-8 py-4 rounded-xl bg-[#f59e0b] text-[#09090b] font-bold text-lg hover:bg-[#fbbf24] transition-colors duration-300 overflow-hidden ripple-container cta-shine-btn"
             whileHover={reducedMotion ? {} : { scale: 1.05, y: -2 }}
             whileTap={reducedMotion ? {} : { scale: 0.98 }}

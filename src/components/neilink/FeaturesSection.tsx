@@ -11,7 +11,6 @@ import {
   BarChart3,
   Wifi,
   FileCode,
-  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
 import TextReveal from "./TextReveal";
@@ -34,7 +33,6 @@ interface FeatureItem {
   title: string;
   desc: string;
   color: string;
-  learnMore: string;
 }
 
 function FeatureCard({
@@ -161,12 +159,6 @@ function FeatureCard({
           <p className="text-sm text-themed-secondary leading-relaxed group-hover:text-themed-primary transition-colors duration-300">
             {feature.desc}
           </p>
-
-          {/* Arrow */}
-          <div className="mt-4 flex items-center gap-1 text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0" style={{ color: feature.color }}>
-            <span>{feature.learnMore}</span>
-            <ArrowRight size={14} />
-          </div>
         </div>
       </div>
     </motion.div>
@@ -183,7 +175,6 @@ export default function FeaturesSection() {
     color: meta.color,
     title: t.features.items[i].title,
     desc: t.features.items[i].description,
-    learnMore: t.features.learnMore,
   }));
 
   const statItems = [

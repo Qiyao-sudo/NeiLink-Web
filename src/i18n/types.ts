@@ -100,12 +100,12 @@ export interface Translations {
     speed: string;
     leaks: string;
     loading: string;
-    badges: {
-      aes: string;
-      openSource: string;
-      local: string;
-      zeroLeak: string;
-    }[];
+    badges: [
+      { aes: string },
+      { openSource: string },
+      { local: string },
+      { zeroLeak: string },
+    ];
     quote: string;
     quoteAttribution: string;
     mitLicense: string;
