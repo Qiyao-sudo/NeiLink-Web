@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/NeiLink-Web",
-  assetPrefix: "/NeiLink-Web",
+  basePath: "",
+  assetPrefix: "",
   images: { unoptimized: true },
   typescript: {
     ignoreBuildErrors: true,
